@@ -1,0 +1,9 @@
+*{
+    box-sizing: border-box;
+}
+.app-menu{
+    width: 200px;
+}
+.app-content{
+    width: calc(100% - 200px);
+}

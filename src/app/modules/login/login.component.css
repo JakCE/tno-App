@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Signika Negative', sans-serif;
+}
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0A2453;
+}
+h2{
+    font-size: 1.1rem;
+    color: #0A2453;
+}
+.logo-first{
+    width: calc(60%);
+    height: 100vh;
+    border-radius: 0px 50px 50px 0px;
+}
+.logo-first img{
+    width: 60%;
+}
+.contenido-login{
+    width: calc(40%);
+    height: 100vh;
+    background-color: rgb(233, 245, 255);
+}
