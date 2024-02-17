@@ -15,15 +15,10 @@ import { LayoutDashComponent } from '../../components/layout-dash/layout-dash.co
 })
 export class DashboardComponent implements OnInit{
   constructor(
-    private apiService: ApiService
+    
   ) {}
 
   ngOnInit() {
-    this.getStudents();
-  }
-  async getStudents(){
-    await this.apiService.getEstudiantes().subscribe(data=>{
-      console.log(data);
-    });
+    
   }
 }
