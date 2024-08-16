@@ -7,6 +7,7 @@ import { ApiService } from '../../services/api/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import {TuiPaginationModule} from '@taiga-ui/kit';
 import { RouterLink } from '@angular/router';
+import { max } from 'rxjs';
 
 @Component({
   selector: 'app-estudiantes',
@@ -31,12 +32,18 @@ export class EstudiantesComponent implements OnInit{
   }
   index: any=0;
   length: any;
+  minRow: any;
+  maxRow: any;
+  totRows: any;
 
   getStudents(){
     this.apiService.getEstudiantes().subscribe(data=>{
       this.dataStudents = data;
       this.dataInitial = data;
 
+      this.totRows=data.length;
+      this.minRow=1;
+      this.maxRow=6;
       //paginado
       this.dataStudents = this.dataInitial.slice(0,6);
       this.length=Math.ceil(this.dataInitial.length/6);
@@ -50,6 +57,8 @@ export class EstudiantesComponent implements OnInit{
     const maxNum = (event+1)*6;
     const minNum = event*6;
     this.dataStudents = this.dataInitial.slice(minNum,maxNum);
+    this.minRow=minNum+1;
+    maxNum > this.totRows ? this.maxRow = this.totRows : this.maxRow = maxNum;
     this.cd.detectChanges();
   }
 }

@@ -25,5 +25,5 @@ export const routes: Routes = [
         { path: 'grupos', component: GruposComponent, canActivate: [authGuard] },
         { path: 'matriculas', component: MatriculasComponent, canActivate: [authGuard] },
       ]
-    },
+    }
 ];

@@ -58,7 +58,8 @@
         </table>
     </div>
     <div class="pagination w-full flex items-center justify-around">
-        <p>1/6 Total: 56</p>
+        <p>Páginas <span class="pag-data">{{ length }}</span></p>
+        <p>Items por página <span class="pag-data">{{minRow}} - {{maxRow}}</span> de <span class="pag-data">{{ totRows }}</span></p>
         <tui-pagination
             [index]="index"
             [length]="length"
